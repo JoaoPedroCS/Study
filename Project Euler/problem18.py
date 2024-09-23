@@ -1,3 +1,5 @@
+import time
+start_time = time.time()
 data = """
 75
 95 64
@@ -15,11 +17,20 @@ data = """
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 """
-
-
+row0 = []
 def parse_triangle() -> list[list[int]]:
     return [[int(word) for word in line.split()] for line in data.strip().split("\n")]
 
 triangle = parse_triangle()
-print(triangle)
+lines = len(triangle)
+for i in range(lines):
+    globals()[f'row{i}'] = triangle[i]
 
+for k in range(lines-2, -1, -1):    
+    for j in range(len(globals()[f'row{k}'])):
+        if globals()[f'row{k+1}'][j] >= globals()[f'row{k+1}'][j+1]:
+            globals()[f'row{k}'][j] += globals()[f'row{k+1}'][j]
+        else:
+            globals()[f'row{k}'][j] += globals()[f'row{k+1}'][j+1]
+
+print(f"answer: {row0[0]}, in {(time.time() - start_time):.5f} seconds")
