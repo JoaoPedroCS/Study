@@ -1,6 +1,4 @@
-/* styles.css */
 
-/* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -27,7 +25,6 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Estilos para os inputs e labels */
 label {
   display: block;
   margin-bottom: 8px;
@@ -54,7 +51,6 @@ textarea {
   height: 100px;
 }
 
-/* Estilos para os botões */
 button {
   background-color: #4CAF50;
   color: white;
