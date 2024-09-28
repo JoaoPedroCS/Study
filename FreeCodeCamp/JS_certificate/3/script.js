@@ -3,40 +3,34 @@ const checkBtn = document.getElementById('check-btn');
 const clearBtn = document.getElementById('clear-btn');
 const resultsDiv = document.getElementById('results-div');
 
-const checkValidNumber = input => {
+const isValidPhoneNumber = input => {
   if (input === '') {
     alert('Please provide a phone number');
     return;
   }
-  const countryCode = '^(1\\s?)?';
-  const areaCode = '(\\([0-9]{3}\\)|[0-9]{3})';
-  const spacesDashes = '[\\s\\-]?';
-  const phoneNumber = '[0-9]{3}[\\s\\-]?[0-9]{4}$';
-  const phoneRegex = new RegExp(
-    `${countryCode}${areaCode}${spacesDashes}${phoneNumber}`
-  );
 
-  const pTag = document.createElement('p');
-  pTag.className = 'results-text';
-  phoneRegex.test(input)
-    ? (pTag.style.color = '#ffffff')
-    : (pTag.style.color = '#ffffff');
-  pTag.appendChild(
-    document.createTextNode(
-      `${phoneRegex.test(input) ? 'Valid' : 'Invalid'} US number: ${input}`
-    )
-  );
-  resultsDiv.appendChild(pTag);
+  const phoneFormat = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}$/;
+
+  const textElement = document.createElement('p');
+  textElement.className = 'text';
+
+  if (phoneFormat.test(input)) {
+    textElement.textContent = `Valid US number: ${input}`;
+  } else {
+    textElement.textContent = `Invalid US number: ${input}`;
+  }
+
+  resultsDiv.appendChild(textElement);
 };
 
 checkBtn.addEventListener('click', () => {
-  checkValidNumber(userInput.value);
+  isValidPhoneNumber(userInput.value);
   userInput.value = '';
 });
 
 userInput.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
-    checkValidNumber(userInput.value);
+    isValidPhoneNumber(userInput.value);
     userInput.value = '';
   }
 });

@@ -1,0 +1,113 @@
+body {
+  background-color: #323232;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+img {
+  margin-top: 30px;
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input {
+  margin-top: 20px;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+}
+
+button {
+  margin-top: 20px;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-screen {
+  border: 10px solid #99c9ff;
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  margin-left: -40px;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#price {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.connector {
+  margin-left: -20px;
+  background-color: #000000;
+  height: 50px;
+  width: 40px;
+}
+
+.top-register {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 35px 35px 0 0;
+  padding-top: 20px;
+  background-color: #99c9ff;
+  height: 250px;
+  width: 325px;
+}
+
+.btns-container {
+  width: 25%;
+}
+
+.btn {
+  border-radius: 10%;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(121, 124, 101);
+}
+
+.cash-drawer-display {
+  font-size: 1rem;
+  background-color: white;
+  width: 55%;
+  height: 70%;
+  color: black;
+  padding: 10px;
+}
+
+.cash-drawer-display p {
+  margin: 0;
+}
+
+.bottom-register {
+  background-color: #99c9ff;
+  height: 50px;
+  width: 325px;
+  margin-top: 10px;
+}
