@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-int get_int(string prompt);
+int get_int(char* prompt);
 
 int main(void)
 {
     int boys = get_int("alunos: ");
     int girls = get_int("alunas: ");
-    printf("Alunos: %i\nAlunas: %i\nTotal: %i\n", boys, girls, (boys+girls));
+    printf("Alunos: %i\nAlunas: %i\nTotal: %i\n", boys, girls, (boys + girls));
 }
 
-int get_int(string prompt)
+int get_int(char* prompt)
 {
     int n;
     printf("%s", prompt);
