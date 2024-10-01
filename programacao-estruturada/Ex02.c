@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <string.h>
 
 int get_int(char* prompt);
 
 int main(void)
 {
-    int boys = get_int("alunos: ");
-    int girls = get_int("alunas: ");
-    printf("Alunos: %i\nAlunas: %i\nTotal: %i\n", boys, girls, (boys + girls));
+    int sony = get_int("");
+    int dell = get_int("");
+    int toshiba = get_int("");
+    printf("%i notebook(s) da Sony\n%i notebook(s) da Dell\n%i notebook(s) da Toshiba\nTotal de %i notebooks", sony, dell, toshiba, (sony + dell + toshiba));
 }
 
 int get_int(char* prompt)
