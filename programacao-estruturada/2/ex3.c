@@ -1,20 +1,13 @@
 #include <stdio.h>
 
 int get_int(char* prompt);
+void get_print(void);
 
 int main(void)
 {
-    int n = get_int("");
-    for (int i = 0; i < n+1; i++)
-    {
-        if (i % 2 != 0) {printf("%d ", i);}
-    }
-    printf("\n");
-    for (int i = 0; i < n+1; i++)
-    {
-        if (i % 2 == 0) {printf("%d ", i);}
-    }
-    printf("\n");
+    get_print();
+    printf("FIM!\n");
+    return 0;
 }
 
 int get_int(char* prompt)
@@ -28,4 +21,23 @@ int get_int(char* prompt)
             continue;
     }
     return n;
+}
+
+void get_print(void)
+{
+    int n = get_int("");
+
+    if (n < 0) 
+    {
+        printf("O numero deve ser >=0!\n");
+        get_print();
+    }
+    else
+    {
+        for (int i = n; i >= 0; i--)
+        {
+            printf("%i ", i);
+        }
+        printf("\n");
+    }
 }
