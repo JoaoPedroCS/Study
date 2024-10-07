@@ -23,7 +23,7 @@ int get_int(char* prompt)
     printf("%s", prompt);
     while (scanf("%d", &n) != 1)
     {
-        printf("Invalid input. Please enter an integer: ");
+        printf("");
         while (getchar() != '\n')
             continue;
     }
