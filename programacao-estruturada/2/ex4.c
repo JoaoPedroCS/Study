@@ -4,28 +4,67 @@ int get_int(char* prompt);
 
 int main(void)
 {
-    int operation = get_int("");
-    if (operation == 1)
+    int done = -1;
+    while (done < 1)
     {
-        int a = get_int("");
-        for (int i = 0; i < n+1; i++)
-        {
-            printf("%d ", i);
-        }
-        printf("\n");
-    }
-    else if (operation == 2)
-    {
+        int smallest;
         int n = get_int("");
-        for (int i = n; i >= 0; i--)
+        if (n == 1)
         {
-            printf("%d ", i);
+            int a = get_int("");
+            int b = get_int("");
+            printf("(a+b) = %i\n", a + b);
+            if (done == -1)
+            {
+                smallest = a + b;
+            }
+            else if (a + b < smallest)
+            {
+                smallest = a + b;
+            }
         }
-        printf("\n");
-    }
-    else
-    {
-        printf("Invalid operation\n");
+        else if (n == 2)
+        {
+            int a = get_int("");
+            int b = get_int("");
+            int c = get_int("");
+            printf("(a+b+c) = %d\n", a + b + c);
+            if (done == -1)
+            {
+                smallest = a + b + c;
+            }
+            else if (a + b + c < smallest)
+            {
+                smallest = a + b + c;
+            }
+        }
+        else if (n == 3)
+        {
+            int a = get_int("");
+            int b = get_int("");
+            printf("(a*b) = %d\n", a * b);
+            if (done == -1)
+            {
+                smallest = a * b;
+            }
+            else if (a * b < smallest)
+            {
+                smallest = a * b;
+            }
+        }
+        else if (n == 0)
+        {
+            if (done == -1)
+            {
+                printf("Nenhum calculo foi realizado!\n");
+            }
+            else
+            {
+                done = 1;
+                printf("Menor resultado: %d\n", smallest);
+            }
+        }
+        if (done == -1) {done = 0;}
     }
     
 }
@@ -41,33 +80,4 @@ int get_int(char* prompt)
             continue;
     }
     return n;
-}
-
-void menu(void)
-{
-    int n = get_int("");
-    if (n == 1)
-    {
-        int a = get_int("");
-        int b = get_int("");
-        printf("%d\n", a + b);
-    }
-    else if (n == 2)
-    {
-        int a = get_int("");
-        int b = get_int("");
-        int c = get_int("");
-        printf("%d\n", (a + b + c));
-    }
-    else if (n == 3)
-    {
-        int a = get_int("");
-        int b = get_int("");
-        printf("%d\n", a * b);
-    }
-    else
-    {
-        
-    }
-
 }
