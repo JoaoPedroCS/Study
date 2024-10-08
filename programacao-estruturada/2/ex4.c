@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int get_int(char* prompt);
+int get_int(char *prompt);
 
 int main(void)
 {
@@ -17,6 +17,7 @@ int main(void)
             if (done == -1)
             {
                 smallest = a + b;
+                done = 0;
             }
             else if (a + b < smallest)
             {
@@ -32,6 +33,7 @@ int main(void)
             if (done == -1)
             {
                 smallest = a + b + c;
+                done = 0;
             }
             else if (a + b + c < smallest)
             {
@@ -46,30 +48,27 @@ int main(void)
             if (done == -1)
             {
                 smallest = a * b;
+                done = 0;
             }
             else if (a * b < smallest)
             {
                 smallest = a * b;
             }
         }
+        else if (n == 0 && done == -1)
+        {
+            printf("Nenhum calculo foi realizado!\n");
+            done = 1;
+        }
         else if (n == 0)
         {
-            if (done == -1)
-            {
-                printf("Nenhum calculo foi realizado!\n");
-            }
-            else
-            {
-                done = 1;
-                printf("Menor resultado: %d\n", smallest);
-            }
+            done = 1;
+            printf("Menor resultado: %d\n", smallest);
         }
-        if (done == -1) {done = 0;}
     }
-    
 }
 
-int get_int(char* prompt)
+int get_int(char *prompt)
 {
     int n;
     printf("%s", prompt);
