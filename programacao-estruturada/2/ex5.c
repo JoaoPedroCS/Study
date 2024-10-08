@@ -13,7 +13,7 @@ int main(void)
             sum += i;
         }
     }
-    printf("%d", sum);
+    printf("%d\n", sum);
 }
 
 int get_int(char* prompt)
