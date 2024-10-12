@@ -12,12 +12,12 @@ int main(void)
         {
             for (int i = 0; i <= lines; i++)
             {
-                count
                 printf("%i", count);
                 if (count >= 10) {printf("...");}
                 else {printf("..");}
-                printf("\n");
+                count++;
             }
+            printf("\n");
         }
     }
 }
