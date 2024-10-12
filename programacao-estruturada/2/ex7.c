@@ -20,7 +20,7 @@ int main(void)
             printf("\n");
         }
     }
-}
+} 
 
 int get_int(char* prompt)
 {
