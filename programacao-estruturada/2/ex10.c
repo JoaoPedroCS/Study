@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-int get_int(char* prompt);
+float get_float(char* prompt);
 float fahrenheit_C(float n1);
 
 int main(void)
 {
-    int n = get_int("");
-    int r = somar_inteiros(n, m);
-    printf("%i\n%i\n%i\n", n, m, r);
+    float n = get_float("");
+    float r = fahrenheit_C(n);
+    printf("%f\n", r);
 }
 
-int get_int(char* prompt)
+float get_float(char* prompt)
 {
-    int n;
+    float n;
     printf("%s", prompt);
-    while (scanf("%d", &n) != 1)
+    while (scanf("%f", &n) != 1)
     {
         printf("\n");
         while (getchar() != '\n')
