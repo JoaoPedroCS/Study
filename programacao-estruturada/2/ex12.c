@@ -1,13 +1,10 @@
 #include <stdio.h>
 
 float get_float(char* prompt);
-float fahrenheit_C(float n1);
 
 int main(void)
 {
-    float n = get_float("");
-    float r = fahrenheit_C(n);
-    printf("%f\n", r);
+    printf("Hello, World!\n");
 }
 
 float get_float(char* prompt)
@@ -21,9 +18,4 @@ float get_float(char* prompt)
             continue;
     }
     return n;
-}
-
-float fahrenheit_C(float n1)
-{
-    return (n1 - 32) * 5 / 9;
 }
