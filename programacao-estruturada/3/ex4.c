@@ -19,3 +19,4 @@ float get_float(char* prompt)
     }
     return n;
 }
+
