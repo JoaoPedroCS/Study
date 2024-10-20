@@ -2,7 +2,7 @@
 
 float get_float(char* prompt);
 char get_char(char* prompt);
-float operacao(float n1, float n2, char simb);
+float operacao(float n1, float n2, char simb); 
 
 int main(void)
 {
