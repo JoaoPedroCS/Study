@@ -29,12 +29,7 @@ char get_char(char* prompt)
 {
     char n;
     printf("%s", prompt);
-    while (1)
-    {
-        scanf("%c", &n);
-        if (n != '\n')
-            break;
-    }
+    scanf(" %c", &n);
     return n;
 }
 
