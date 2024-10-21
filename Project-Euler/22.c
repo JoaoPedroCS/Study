@@ -11,8 +11,6 @@ int main(void) {
         return 1;
     }
 
-    // read one character at a time and
-    // display it to the output
     char ch;
     while ((ch = fgetc(fp)) != EOF)
         putchar(ch);
