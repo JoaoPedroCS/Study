@@ -17,6 +17,7 @@ int main(void) {
     int count = 1;
     while ((ch = fgetc(fp)) != EOF) {
         current = 0;
+        
 
     }
         
