@@ -12,8 +12,13 @@ int main(void) {
     }
 
     char ch;
-    while ((ch = fgetc(fp)) != EOF)
-        putchar(ch);
+    long sum;
+    int current;
+    while ((ch = fgetc(fp)) != EOF) {
+        current = 0;
+
+    }
+        
 
 
 
