@@ -2,6 +2,7 @@
 
 
 int main(void) {
+    int ch = 34;
     char *filename = "./assets/22.txt";
     FILE *fp = fopen(filename, "r");
 
@@ -15,9 +16,15 @@ int main(void) {
     long sum;
     int current = 0;
     int count = 1;
-    while ((ch = fgetc(fp)) != EOF) {
+    int end = 0;
+    while ((ch = fgetc(fp)) != EOF)
+    {
         current = 0;
-        
+        if (ch == "")
+        {
+
+        }
+
 
     }
         
