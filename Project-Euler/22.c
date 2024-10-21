@@ -23,12 +23,13 @@ int main(void) {
             count += 1;
             currentSum = 0;
         }
-        else if (ch >=65 && ch<= 90)
+        else if (ch >= 'A' && ch <= 'Z')
         {
             currentSum += ch - 64;
         }
+        if (count >= 4995 && currentSum == 0) {printf("%lld \n", result);}
     }
-    
+
     fclose(fp);
     printf("%lld", result);
 
