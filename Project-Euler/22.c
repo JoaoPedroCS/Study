@@ -17,7 +17,8 @@ int main(void) {
     while ((ch = fgetc(fp)) != EOF)
         putchar(ch);
 
-    // close the file
+
+
     fclose(fp);
 
 }
