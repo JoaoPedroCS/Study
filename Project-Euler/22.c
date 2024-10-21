@@ -31,6 +31,5 @@ int main(void) {
     }
 
     fclose(fp);
-    printf("%lld", result);
 
 }
