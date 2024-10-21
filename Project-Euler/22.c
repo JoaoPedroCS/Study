@@ -2,7 +2,8 @@
 
 
 int main(void) {
-    int ch = 34;
+    int f = 34;
+    printf("%c\n", f);
     char *filename = "./assets/22.txt";
     FILE *fp = fopen(filename, "r");
 
@@ -13,16 +14,20 @@ int main(void) {
     }
 
     char ch;
-    long sum;
-    int current = 0;
+    long result = 0;
+    int currentSum = 0;
     int count = 1;
-    int end = 0;
     while ((ch = fgetc(fp)) != EOF)
     {
-        current = 0;
-        if (ch == "")
+        if (ch == 34 && currentSum > 0)
         {
-
+            result += currentSum * count;
+            count += 1;
+            currentSum = 0;
+        }
+        else if (ch >=65 && ch<= 90)
+        {
+            
         }
 
 
