@@ -13,7 +13,8 @@ int main(void) {
 
     char ch;
     long sum;
-    int current;
+    int current = 0;
+    int count = 1;
     while ((ch = fgetc(fp)) != EOF) {
         current = 0;
 
