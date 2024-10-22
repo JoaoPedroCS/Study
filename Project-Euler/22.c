@@ -27,7 +27,6 @@ int main(void) {
         {
             currentSum += ch - 64;
         }
-        if (count >= 4995 && currentSum == 0) {printf("%lld \n", result);}
     }
 
     fclose(fp);
