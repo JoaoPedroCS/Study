@@ -3,6 +3,9 @@
 
 void insertSort(char** x, int size);
 int compareStrings(char* a, char* b);
+int evaluate(char** x, int size);
+int sumLet(char* x);
+
 
 
 
@@ -42,8 +45,10 @@ int main() {
     }
 
     names = realloc(names, w * sizeof(char*));
-    
-    int answer = 1;
+    insertSort(names, w);
+
+    long long answer = evaluate(names, w);
+    printf("%lld", answer);    
 
     for (int i = 0; i < w; i++) {
         free(names[i]);
@@ -100,7 +105,22 @@ int compareStrings(char* a, char* b)
     }
 }
 
-int evaluate(char* x, int size)
+int evaluate(char** x, int size)
 {
-    
+    int answer = 0;
+    for (int i = 0; i < size; i++)
+    {
+        answer += (sumLet(x[i]) * (i+1));
+    }
+}
+
+int sumLet(char* x)
+{
+    int i = 0;
+    int sum = 0;
+    while (x[i] != 0)
+    {
+        sum += x[i] - 64;
+    }
+    return sum;
 }
