@@ -16,7 +16,7 @@ int main() {
 
     char line[MAX_LINE_LEN];
     while (fgets(line, sizeof(line), example)) {
-        printf("%s", line);
+        
     }
 
     
