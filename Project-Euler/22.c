@@ -56,8 +56,8 @@ int main() {
     long long answer = evaluate(names, w);
     printf("--------> %lld <--------\n", answer);    
 
-    end = clock();  // End time
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;  // Convert to seconds
+    end = clock(); 
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
     printf("-----> Time: %fs <-----\n", cpu_time_used);
 
