@@ -33,7 +33,7 @@ int main() {
     }
 
     names[w][l+1] = '\0';
-    names[w+1] = '\0';
+    names[w+1][0] = '\0';
 
 
     for (int i = 0; i < 5; i++)
