@@ -3,7 +3,7 @@
 
 
 int main() {
-    FILE* example = fopen("./assets/22.txt", "r");
+    FILE* example = fopen("./assets/ex.txt", "r");
     if (example == NULL)
     {
         printf("Error: could not open file.");
@@ -50,4 +50,10 @@ int main() {
     free(names);
     fclose(example);
     return 0;
+}
+
+
+void mergeSort(char** x, int size)
+{
+    
 }
