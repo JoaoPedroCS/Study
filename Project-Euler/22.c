@@ -1,34 +1,130 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+void insertSort(char** x, int size);
+int compareStrings(char* a, char* b);
+long long evaluate(char** x, int size);
+int sumLet(char* x);
 
 
-int main(void) {
-    char *filename = "./assets/22.txt";
-    FILE *fp = fopen(filename, "r");
 
-    if (fp == NULL)
+
+int main() {
+
+    FILE* example = fopen("./assets/22.txt", "r");
+    if (example == NULL)
     {
-        printf("Error: could not open file %s", filename);
+        printf("Error: could not open file.");
         return 1;
     }
 
-    char ch;
-    long long int result = 0;
-    int currentSum = 0;
-    int count = 1;
-    while ((ch = fgetc(fp)) != EOF)
+    int expected = 5500;
+    int standLetters = 20;
+    int c;
+    int w = 0;
+    char l = 0;
+    char** names = malloc(expected * sizeof(char*));
+    for (int i = 0; i < expected; i++)
     {
-        if (ch == '\"' && currentSum > 0)
-        {
-            result += currentSum * count;
-            count += 1;
-            currentSum = 0;
-        }
-        else if (ch >= 'A' && ch <= 'Z')
-        {
-            currentSum += ch - 64;
-        }
+        names[i] = malloc(standLetters * sizeof(char));
     }
 
-    fclose(fp);
+    while ((c = fgetc(example)) != EOF)
+    {
+       if (c >= 'A' && c <= 'Z')
+        {
+            names[w][l] = c;
+            l += 1;
+        }
+        else if (c == ',')
+        {
+            names[w][l+1] = '\0';
+            w += 1;
+            l = 0;
+        }
+    }
+    w +=1;
 
+    names = realloc(names, w * sizeof(char*));
+    insertSort(names, w);
+
+
+    long long answer = evaluate(names, w);
+    printf("--------->%lld<---------\n", answer);    
+
+    for (int i = 0; i < w; i++) {
+        free(names[i]);
+    }
+    free(names);
+    fclose(example);
+    return 0;
+}
+
+
+void insertSort(char** x, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        char* tmp;
+        char* smallest = x[i];
+        int index = i;
+        for (int k = i+1; k < size; k++)
+        {
+            if (compareStrings(smallest, x[k]) == 1)
+            {
+                smallest = x[k];
+                index = k;
+            }
+        }
+        tmp = x[i];
+        x[i] = smallest;
+        x[index] = tmp;
+    }
+}
+
+int compareStrings(char* a, char* b)
+{
+    int z = 0;
+    while (a[z] != '\0' && b[z] != '\0')
+    {
+        if (a[z] < b[z])
+        {
+            return 0;
+        }
+        else if (a[z] > b[z])
+        {
+            return 1;
+        }
+        z+=1;
+    }
+    if (a[z] <= b[z])
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
+
+long long evaluate(char** x, int size)
+{
+    long long answer = 0;
+    for (int i = 0; i < size; i++)
+    {
+        answer += (sumLet(x[i]) * (i+1));
+    }
+    return answer;
+}
+
+int sumLet(char* x)
+{
+    int i = 0;
+    int sum = 0;
+    while (x[i] != 0)
+    {
+        sum += x[i] - 64;
+        i++;
+    }
+    return sum;
 }
