@@ -43,10 +43,7 @@ int main() {
 
     names = realloc(names, w * sizeof(char*));
     
-    char ch;
-    long long int result = 0;
-    int currentSum = 0;
-    int count = 1;
+    int answer = 1;
 
     for (int i = 0; i < w; i++) {
         free(names[i]);
@@ -101,4 +98,9 @@ int compareStrings(char* a, char* b)
     {
         return 1;
     }
+}
+
+int evaluate(char* x, int size)
+{
+    
 }
