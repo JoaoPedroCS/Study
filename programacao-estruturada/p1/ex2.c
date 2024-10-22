@@ -39,6 +39,5 @@ void print_array(int* x, int n)
 void sort_array(int* x, int n)
 {
     int xsorted[n];
-    
 }
 
