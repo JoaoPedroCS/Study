@@ -46,8 +46,8 @@ int main() {
     w +=1;
 
     names = realloc(names, w * sizeof(char*));
-    insertSort(names, w);
 
+    insertSort(names, w);
 
     long long answer = evaluate(names, w);
     printf("--------->%lld<---------\n", answer);    
