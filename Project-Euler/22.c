@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void insertSort(char** x, int size);
 int compareStrings(char* a, char* b);
@@ -10,6 +11,9 @@ int sumLet(char* x);
 
 
 int main() {
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
 
     FILE* example = fopen("./assets/22.txt", "r");
     if (example == NULL)
@@ -50,7 +54,12 @@ int main() {
     insertSort(names, w);
 
     long long answer = evaluate(names, w);
-    printf("--------->%lld<---------\n", answer);    
+    printf("--------> %lld <--------\n", answer);    
+
+    end = clock();  // End time
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;  // Convert to seconds
+
+    printf("-----> Time: %fs <-----\n", cpu_time_used);
 
     for (int i = 0; i < w; i++) {
         free(names[i]);
