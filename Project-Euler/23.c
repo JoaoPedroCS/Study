@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void Xdivisors(double x);
+void divisors(double x);
 double sqrt(double x);
 
 int main(void)
@@ -8,9 +8,13 @@ int main(void)
     
 }
 
-void Xdivisors(double x)
+void divisors(double x)
 {
     int rounded = (int) sqrt(x);
+    for (int i = 2; i <= rounded; i++)
+    {
+
+    }
 }
 
 double sqrt(double x)
