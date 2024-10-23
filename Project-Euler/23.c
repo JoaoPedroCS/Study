@@ -6,11 +6,9 @@ double root(int y);
 
 int main(void)
 {
-    int n;
-    scanf("%d", &n);
-    int * abundants = malloc(1000 * sizeof(int));
+    int* abundants = malloc(1000 * sizeof(int));
     int position = 0;
-    for (int i = 12; i < 28124; i++)
+    for (int i = 12; i < 200; i++)
     {
         if (isAbundant(i) == 0)
         {
