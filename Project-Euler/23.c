@@ -6,9 +6,9 @@ double root(int y);
 
 int main(void)
 {
-    int* abundants = malloc(1000 * sizeof(int));
+    int* abundants = malloc(7000 * sizeof(int));
     int position = 0;
-    for (int i = 12; i < 200; i++)
+    for (int i = 12; i < 28124; i++)
     {
         if (isAbundant(i) == 0)
         {
@@ -16,6 +16,16 @@ int main(void)
             position += 1;
         }
     }
+    abundants = realloc(abundants, position * sizeof(int));
+    
+    int* numbers = malloc(28123 * sizeof(int));
+    for (int i = 1; i < 28124; i++)
+    {
+        numbers[i] = i;
+    }
+
+    free(abundants);
+    free(numbers);
 }
 
 int isAbundant(int x)
@@ -70,5 +80,11 @@ double root(int y)
     return guess;
 }
 
-
+void findSum(int* numbers, int* abundants, int position)
+{
+    for (int i = 0; i < position; i++)
+    {
+        
+    }
+}
 
