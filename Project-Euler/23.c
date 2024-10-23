@@ -1,29 +1,55 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void divisors(double x);
-double sqrt(double x);
+int isAbundant(int x);
+double root(int y);
 
 int main(void)
 {
-    
-}
-
-void divisors(double x)
-{
-    int rounded = (int) sqrt(x);
-    for (int i = 2; i <= rounded; i++)
+    int n;
+    scanf("%d", &n);
+    int * abundants = malloc(1000 * sizeof(int));
+    int position = 0;
+    for (int i = 12; i < 28124; i++)
     {
-
+        if (isAbundant(i) == 0)
+        {
+            abundants[position] = i;
+            position += 1;
+        }
     }
 }
 
-double sqrt(double x)
+int isAbundant(int x)
 {
-    if (x < 0) {
+    int rounded = (int) root(x);
+    int sum_divisors = 1;
+    for (int i = 2; i <= rounded; i++)
+    {        
+        if (x % i == 0)
+        {
+            sum_divisors += i;
+            if (x/i > rounded)
+            {
+                sum_divisors += x/i;
+            }
+        }
+    }
+    if (sum_divisors > x)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+double root(int y)
+{
+    if (y < 0) {
         printf("Negative input error\n");
         return -1;
     }
-    
+
+    double x = (double) (y);
     double tolerance = 0.000001;
     double guess = x / 2.0;
     if (x >= 1000000)
