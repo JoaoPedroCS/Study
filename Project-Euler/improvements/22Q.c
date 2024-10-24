@@ -13,7 +13,7 @@ int main() {
     double cpu_time_used;
     start = clock();
 
-    FILE* example = fopen("./assets/22.txt", "r");
+    FILE* example = fopen("../assets/22.txt", "r");
     if (example == NULL) {
         printf("Error: could not open file.");
         return 1;

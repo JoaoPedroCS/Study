@@ -12,7 +12,7 @@ int main(void)
     double cpu_time_used;
     start = clock();
 
-    int* abundants = malloc(7000 * sizeof(int));
+    int* abundants = malloc(6965 * sizeof(int));
     int position = 0;
     for (int i = 12; i < 28124; i++)
     {
@@ -21,8 +21,6 @@ int main(void)
             abundants[position++] = i;
         }
     }
-    abundants = realloc(abundants, position * sizeof(int));
-    
     int* numbers = malloc(28123 * sizeof(int));
     for (int i = 1; i < 28124; i++)
     {
