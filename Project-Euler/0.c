@@ -18,8 +18,7 @@ int main(void)
     {
         if (isAbundant(i) == 0)
         {
-            abundants[position] = i;
-            position += 1;
+            abundants[position++] = i;
         }
     }
     abundants = realloc(abundants, position * sizeof(int));
