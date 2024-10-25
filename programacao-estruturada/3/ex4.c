@@ -18,6 +18,7 @@ float get_float(char* prompt)
             continue;
     }
     return n;
+    
 }
 
 
