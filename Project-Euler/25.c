@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 void fibbo(char* x, char* y, int* index);
 void sum_of_strings(char* x, char* y);
@@ -9,6 +10,10 @@ int strLen(char* x);
 
 int main(void) 
 {
+    clock_t start, end;
+    double cpu_time_used;
+    start = clock();
+
     char* X = (char*)malloc(1000 * sizeof(char));
     if (X == NULL) {
         fprintf(stderr, "Memory allocation failed\n");
@@ -24,7 +29,11 @@ int main(void)
     strcpy(X, "1");
     strcpy(Y, "1");
     fibbo(X, Y, &index);
-    printf("Index: %i\n", index);
+    printf("-------> Index: %i <-------\n", index);
+
+    end = clock(); 
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("-----> Time: %fs <-----\n", cpu_time_used);
 }
 
 void fibbo(char* x, char* y, int* index)
