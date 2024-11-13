@@ -5,6 +5,7 @@
 void fibbo(char* x, char* y, int* index);
 void sum_of_strings(char* x, char* y);
 void string_rev(char* x);
+int strLen(char* x);
 
 int main(void) 
 {
@@ -22,21 +23,18 @@ int main(void)
     int index = 2;
     strcpy(X, "1");
     strcpy(Y, "1");
-    sum_of_strings(X, Y);
+    fibbo(X, Y, &index);
+    printf("\nindex: %i\n", index);
 }
 
 void fibbo(char* x, char* y, int* index)
 {
-    if (*x != *y)
+    if (strLen(x) >= 3)
     {
         return;
     }
-    char* tmp;
-    tmp = *x;
-    *x += *y;
-    *y = tmp;
+    sum_of_strings(x, y);
     *index += 1;
-    printf("%s, ", x);
     fibbo(x, y, index);
 }
 
@@ -103,5 +101,5 @@ int strLen(char* x)
     {
         i++;
     }
-
+    return i;
 }
