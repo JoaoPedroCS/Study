@@ -3,6 +3,7 @@
 #include <string.h>
 
 void fibbo(char* x, char* y, int* index);
+void sum_of_strings(char* x, char* y);
 void string_rev(char* x);
 
 int main(void) 
@@ -19,9 +20,10 @@ int main(void)
     }
     
     int index = 2;
-    strcpy(X, Y);
-    string_rev(X);
-    printf("X: %s\n", X);
+    strcpy(X, "100");
+    strcpy(Y, "44");
+    sum_of_strings(X, Y);
+    printf("X: %s\nY: %s", X, Y);
 }
 
 void fibbo(char* x, char* y, int* index)
@@ -42,7 +44,45 @@ void fibbo(char* x, char* y, int* index)
 
 void sum_of_strings(char* x, char* y)
 {
-    
+    char tmp[1000];
+    printf("x: %s, y: %s\n", x, y);
+    strcpy(tmp, x);
+    string_rev(x);
+    string_rev(y);
+    int i = 0;
+    int sobe = 0;
+    while (x[i] != '\0')
+    {
+        if (y[i] != '\0')
+        {
+            if ((x[i] + y[i] - '0' + sobe) <= '9')
+            {
+                x[i] = x[i] + y[i] - '0' + sobe;
+                sobe = 0;
+            }
+            else 
+            {
+                x[i] = x[i] + y[i] - '0' - 10 + sobe;
+                sobe = 1;
+            }
+        }
+        else
+        {
+            if ((x[i] + sobe) <= '9')
+            {
+                x[i] += sobe;
+                sobe = 0;
+            }
+            else 
+            {
+                x[i] = 0;
+                sobe = 1;
+            }
+        }
+    }
+    printf("x: %s, y: %s\n", x, y);
+    strcpy(y, tmp);
+    printf("x: %s, y: %s\n", x, y);
 }
 
 void string_rev(char *x)
