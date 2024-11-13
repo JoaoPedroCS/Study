@@ -95,3 +95,13 @@ void string_rev(char *x)
         x[len - i - 1] = temp;
     }
 }
+
+int strLen(char* x)
+{
+    int i = 0;
+    while (x[i] != '\0')
+    {
+        i++;
+    }
+
+}
