@@ -20,15 +20,13 @@ int main(void)
     }
     
     int index = 2;
-    strcpy(X, "100");
-    strcpy(Y, "44");
+    strcpy(X, "1");
+    strcpy(Y, "1");
     sum_of_strings(X, Y);
-    printf("X: %s\nY: %s\n", X, Y);
 }
 
 void fibbo(char* x, char* y, int* index)
 {
-    /*
     if (*x != *y)
     {
         return;
@@ -39,7 +37,7 @@ void fibbo(char* x, char* y, int* index)
     *y = tmp;
     *index += 1;
     printf("%s, ", x);
-    fibbo(x, y, index);*/
+    fibbo(x, y, index);
 }
 
 void sum_of_strings(char* x, char* y)
