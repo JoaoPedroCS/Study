@@ -24,12 +24,12 @@ int main(void)
     strcpy(X, "1");
     strcpy(Y, "1");
     fibbo(X, Y, &index);
-    printf("\nindex: %i\n", index);
+    printf("Index: %i\n", index);
 }
 
 void fibbo(char* x, char* y, int* index)
 {
-    if (strLen(x) >= 3)
+    if (strLen(x) >= 1000)
     {
         return;
     }
@@ -75,6 +75,11 @@ void sum_of_strings(char* x, char* y)
             }
         }
         i ++;
+    }
+    if (sobe == 1)
+    {
+        x[i] = '1';
+        x[i+1] = '\0';
     }
     strcpy(y, tmp);
     string_rev(x);
