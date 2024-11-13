@@ -23,7 +23,7 @@ int main(void)
     strcpy(X, "100");
     strcpy(Y, "44");
     sum_of_strings(X, Y);
-    printf("X: %s\nY: %s", X, Y);
+    printf("X: %s\nY: %s\n", X, Y);
 }
 
 void fibbo(char* x, char* y, int* index)
@@ -45,7 +45,6 @@ void fibbo(char* x, char* y, int* index)
 void sum_of_strings(char* x, char* y)
 {
     char tmp[1000];
-    printf("x: %s, y: %s\n", x, y);
     strcpy(tmp, x);
     string_rev(x);
     string_rev(y);
@@ -79,10 +78,10 @@ void sum_of_strings(char* x, char* y)
                 sobe = 1;
             }
         }
+        i ++;
     }
-    printf("x: %s, y: %s\n", x, y);
     strcpy(y, tmp);
-    printf("x: %s, y: %s\n", x, y);
+    string_rev(x);
 }
 
 void string_rev(char *x)
