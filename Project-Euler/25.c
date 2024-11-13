@@ -1,27 +1,38 @@
 #include <stdio.h>
 
-void fibbo(int* x, int* y, int limit);
+void fibbo(char* x, char* y, int* index);
 
 int main(void) 
 {
-    int x = 1;
-    int y = 1;
-    int z;
-    scanf("%i", &z);
-    fibbo(&x, &y, z);
-    printf("\nx: %i\n", x);
+    char* X = (char*)malloc(1000 * sizeof(char));
+    if (X == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return 1;
+    }
+    char* Y = (char*)malloc(1000 * sizeof(char));
+    if (Y == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return 1;
+    }
+    int index = 2;
 }
 
-void fibbo(int* x, int* y, int limit)
+void fibbo(char* x, char* y, int* index)
 {
-    if (*x >= limit)
+    if (*x >= index)
     {
         return;
     }
-    int tmp;
+    char* tmp;
     tmp = *x;
     *x += *y;
     *y = tmp;
-    printf("%i, ", *x);
-    fibbo(x, y, limit);
+    *index += 1;
+    printf("%s, ", x);
+    /*fibbo(x, y, index);*/
+}
+
+void sum_of_strings(char* x, char* y)
+{
+
 }
